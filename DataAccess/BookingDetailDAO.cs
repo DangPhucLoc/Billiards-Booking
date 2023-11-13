@@ -15,7 +15,7 @@ namespace DataAccess
             _context = new BBP_CSharpContext();
             return _context.BookingDetails.Find(bookingDetailId);
         }
-
+        public BookingDAO? getDbByBookingD
         public List<BookingDetail> GetAll()
         {
             _context = new BBP_CSharpContext();

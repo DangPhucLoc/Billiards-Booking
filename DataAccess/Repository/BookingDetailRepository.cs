@@ -11,7 +11,8 @@ namespace DataAccess.Repository
     {
         private BookingDetailDAO _bookingDetailDAO = new BookingDetailDAO();
 
-        public List<BookingDetail> getAllBookings() => _bookingDetailDAO.GetAll();
+        public List<BookingDetail> getAllBookingDetails() => _bookingDetailDAO.GetAll();
+        public List<BookingDetail> GetBookingDetailsByBookingId(int bookingID) => _bookingDetailDAO.getDbByBookingId(bookingID);
 
         public void addBB(BookingDetail bd) => _bookingDetailDAO.Create(bd);
 
