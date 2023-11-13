@@ -30,7 +30,7 @@ namespace BussinessObject.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-38G8KJF;Database=BBP_CSharp;User Id=sa;Password=12345;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("Server=(local); Database=BBP_CSharp; Uid=sa; Pwd=12345; TrustServerCertificate=True;");
             }
         }
 
@@ -142,7 +142,7 @@ namespace BussinessObject.Models
             modelBuilder.Entity<Price>(entity =>
             {
                 entity.HasKey(e => new { e.TableTypeId, e.SlotId })
-                    .HasName("PK__Price__4EB20321E7F47A2F");
+                    .HasName("PK__Price__4EB20321CA8BD30B");
 
                 entity.ToTable("Price");
 
