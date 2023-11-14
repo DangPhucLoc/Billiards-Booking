@@ -39,6 +39,16 @@ namespace DataAccess
             return GetAll().FirstOrDefault(u => u.UserId == id);
         }
 
+        public User? GetByUserNameAndPassword(string username, string password)
+        {
+            return GetAll().FirstOrDefault(u => u.Username == username && u.Password == password);
+        }
+
+        public User? GetByUserName(string username)
+        {
+            return GetAll().FirstOrDefault(u => u.Username == username);
+        }
+
         public User? GetByName(string name)
         {
             return GetAll().FirstOrDefault(u => u.FirstName.Contains(name) || u.LastName.Contains(name));
